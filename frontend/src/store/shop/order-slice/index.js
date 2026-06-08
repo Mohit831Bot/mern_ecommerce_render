@@ -8,7 +8,7 @@ const initialState = {
 }
 
 export const createNewOrder = createAsyncThunk('/orders/createNewOrder', async (orderData) => {
-    const response = await axios.post('http://localhost:3000/api/shop/order/create', orderData)
+    const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/shop/order/create`, orderData)
 
     return response.data
 })
